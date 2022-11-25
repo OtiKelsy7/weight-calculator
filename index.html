@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,44 +8,35 @@
     <title>OTIs farm</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="h1-container">
-        <h1>Calculate a weight of an object on a planet</h1>
-    </div>
-    <div id="input-container">    
-    <input type="number" id="inputfield" placeholder="enter number in kilogram">
-    <select name="planets" id="planet">
-        <option value="mercury">
-            <p>Mercury</p>
-        </option>
-        <option value="venus">
-            <p>venus</p>
-        </option>
-        <option value="earth">
-            <p>earth</p>
-        </option>
-        <option value="mars">
-            <p>mars</p>
-        </option>
-        <option value="jupiter">
-            <p>jupiter </p>
-        </option>
-        <option value="saturn">
-            <p>saturn </p>
-        </option>
-        <option value="uranus">
-            <p>uranus </p>
-        </option>
-        <option value="neptune">
-            <p>neptune </p>
-        </option>
-    </select>
-    <button id="btn">Calculate</button>
-    </div>
 
-    <div id="container">
+<body>
+    <!-- removed h1-container div cus it wasn't doing anything -->
+    <h1>Calculate a Weight of an Object on a Planet</h1>
+    <!-- using a form improves accessibility than a div -->
+    <form id="input-container">
+        <!-- minimum value should be zero since we can't have a negative mass -->
+        <input type="number" id="input-field" placeholder="Enter mass in kilograms" min="0">
+        <select name="planets" id="planet">
+            <!-- option tag is accessible enough, so no "p" tags are required; the "value" attribute is also optional since the default value of the option tag is the text within -->
+            <option>Mercury</option>
+            <option>Venus</option>
+            <!-- when the page loads, the first option seen should be earth since the first image is earth.jpg -->
+            <option selected>Earth</option>
+            <option>Mars</option>
+            <option>Jupiter</option>
+            <option>Saturn</option>
+            <option>Uranus</option>
+            <option>Neptune</option>
+        </select>
+        <!-- the role of "submit" helps certain screen readers -->
+        <button id="btn" role="submit">Calculate</button>
+    </form>
+    <!-- the data-weight holds the calculated the weight of the object -->
+    <div id="container" data-weight="">
         <div id="container-cover"></div>
     </div>
+    <!-- personal advice: it's better to style stuff using classes for certain reasons like avoiding specificity issues (besides it's future and framework-proof), leave ids for javascript -->
     <script src="script.js"></script>
 </body>
+
 </html>
