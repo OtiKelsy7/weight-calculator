@@ -5,6 +5,7 @@
 }
 
 * {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -108,3 +109,110 @@
     height: inherit;
     z-index: 1;
   }
+=======
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* incase of next time try to use more of ems and rems for responsiveness and scalability - it also improves accessibility*/
+  font-size: 15px;
+  font-weight: bold;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  /* display: block; - isn't necessary cus headings are block-level by default - read up on formatting contexts*/
+  color: white;
+  margin-top: 15px;
+  /* so as to make it look good on smaller screens */
+  padding: 0 0.5em;
+  width: 70%;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#input-field {
+  padding-left: 15px;
+}
+
+input {
+  border: none;
+  /* fixed heights can be dangerous in some cases */
+  height: 30px;
+  width: 250px;
+  margin-left: 15px;
+}
+
+#input-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  /* making the form responsive */
+  flex-wrap: wrap;
+  width: 70%;
+  margin-inline: auto;
+  justify-content: center;
+}
+
+#btn {
+  border: none;
+  color: rgb(25, 25, 25);
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  /* it's best to add transitions on the inactive state so that they'd be uniform */
+  transition: width 0.8s ease-in-out;
+}
+
+/* the focus-visible is for keyboard users */
+#btn:hover,
+#btn:focus-visible {
+  width: 100px;
+}
+
+#container {
+  /* a responsive choice */
+  width: min(80%, 400px);
+  height: 400px;
+  /* background-color: white; - didn't see what this guy was doing*/
+  background-image: url("earth.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 15px;
+  border-radius: 20px;
+  position: relative;
+  /* to center it horizontally */
+  margin-inline: auto;
+}
+
+/* to display the weight of the object after calculations */
+#container::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: attr(data-weight);
+  color: white;
+  z-index: 2;
+  font-size: 3.5rem;
+}
+
+#container-cover {
+  position: absolute;
+  background-color: rgba(25, 25, 25, 0.78);
+  /* inherit has limitations */
+  width: 100%;
+  height: inherit;
+  /* relax with the z-index sheesh - read up on stacking contexts*/
+  z-index: 1;
+}
+>>>>>>> b353b70299cf7b9e1087a3ca5971610cb2f180b3
